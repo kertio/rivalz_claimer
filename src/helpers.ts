@@ -4,7 +4,8 @@ import { readFileSync } from "fs";
 export const getKeysFromFile = (filename: string): string[] => {
   const fs = readFileSync(filename, 'utf-8');
   
-  return fs.trim().split('\r\n')
+  // return fs.trim().split('\r\n');
+  return fs.trim().split('\n');
 }
 
 export const getSignature = async (messageToSign: string, privKey: string): Promise<string> => {  
